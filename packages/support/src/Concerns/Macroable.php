@@ -14,6 +14,9 @@ trait Macroable
      */
     protected static array $macros = [];
 
+    /**
+     * @param-closure-this static  $macro
+     */
     public static function macro(string $name, callable $macro): void
     {
         static::$macros[$name][static::class] = $macro;
